@@ -1,14 +1,15 @@
 /* ============================================================
-   DIETÉTICA MITRE — VARIABLES EDITABLES (único lugar a editar)
-   La dueña / desarrollador solo necesita cambiar este bloque.
+   DIETÉTICA MITRE — DEMO CONCEPTUAL DE PORTFOLIO
+   No es el sitio oficial ni un trabajo realizado para el comercio.
+   El contenido de esta demo se modifica en el código, no desde un panel.
    ============================================================ */
 const CONFIG = {
   negocio: "Dietética Mitre",
   rubro: "Dietética, herboristería y suplementos",
   logo: "imagenes/logo.jpg",
 
-  // PLACEHOLDERS EDITABLES — reemplazar por datos reales al publicar.
-  // No inventar número: dejar tal cual hasta confirmar.
+  // PLACEHOLDERS SIN CONFIRMAR — no inventar datos.
+  // WhatsApp, Instagram, horarios y Maps quedan pendientes.
   whatsapp: "WHATSAPP_A_CONFIRMAR",
   whatsappLabel: "WHATSAPP_A_CONFIRMAR",
 
@@ -19,19 +20,38 @@ const CONFIG = {
   horarios: "HORARIOS_A_CONFIRMAR",
   mapsUrl: "MAPS_URL_A_CONFIRMAR", // Ej real: "https://maps.google.com/?q=Av.+Godoy+Cruz+394+Mendoza"
 
-  envios: true, // Confirmado: el local realiza envíos. Zonas/costos a consultar por WhatsApp.
+  // Mención general permitida: "Consultá por envíos".
+  // Sin zonas, costos, plazos ni condiciones confirmadas.
+  enviosMencionGeneral: "Consultá por envíos",
 
-  avisoLegal: "Los productos, precios y promociones pueden variar. Consultá disponibilidad antes de realizar tu compra.",
+  avisoLegal: "Demo conceptual de portfolio. Los productos y precios de muestra pueden variar.",
 
-  // Productos de DEMOSTRACIÓN — sin marcas, precios ni stock reales.
-  // etiqueta: franja editorial. categoria: línea de clasificación visible.
+  categorias: [
+    { id: "cat-herboristeria", nombre: "Herboristería" },
+    { id: "cat-suplementos", nombre: "Suplementos" },
+    { id: "cat-proteinas", nombre: "Proteínas" },
+    { id: "cat-vitaminas", nombre: "Vitaminas" },
+    { id: "cat-alimentos-saludables", nombre: "Alimentos saludables" }
+  ],
+
+  // Productos de DEMOSTRACIÓN — genéricos, sin marcas, sin precios ni stock reales.
+  // precio: null significa "Consultar". Nunca usar $0 ni precios inventados.
   productos: [
-    { nombre: "Proteína (ejemplo)", categoria: "Proteínas", etiqueta: "Para tu entrenamiento", desc: "Frasco de ejemplo. Consultá opciones disponibles.", arte: "protein", clase: "prod-prot" },
-    { nombre: "Vitamina (ejemplo)", categoria: "Vitaminas", etiqueta: "Más buscados", desc: "Envase de ejemplo. Consultá opciones disponibles.", arte: "vit", clase: "prod-vit" },
-    { nombre: "Mix de frutos secos (ejemplo)", categoria: "Alimentos saludables", etiqueta: "Opciones saludables", desc: "Bowl de ejemplo. Presentaciones a confirmar.", arte: "seeds", clase: "prod-ali" },
-    { nombre: "Granola (ejemplo)", categoria: "Alimentos saludables", etiqueta: "Opciones saludables", desc: "Producto de ejemplo. Consultá variedades.", arte: "granola", clase: "prod-ali" },
-    { nombre: "Hierbas para infusión (ejemplo)", categoria: "Herboristería", etiqueta: "Consultá disponibilidad", desc: "Taza de ejemplo. Consultá variedades.", arte: "tea", clase: "prod-herb" },
-    { nombre: "Suplemento (ejemplo)", categoria: "Suplementos", etiqueta: "Para tu entrenamiento", desc: "Producto de ejemplo. Consultá opciones disponibles.", arte: "suple", clase: "prod-supl" }
+    { nombre: "Mezcla para infusión (ejemplo)", categoria: "Herboristería", etiqueta: "Ejemplo de muestra", desc: "Mezcla genérica para infusión. Ejemplo sin marca real.", arte: "tea", clase: "prod-herb", precio: null },
+    { nombre: "Hierbas surtidas (ejemplo)", categoria: "Herboristería", etiqueta: "Ejemplo de muestra", desc: "Hierbas genéricas envasadas. Presentación a modo ilustrativo.", arte: "tea", clase: "prod-herb", precio: null },
+    { nombre: "Tisana de hierbas (ejemplo)", categoria: "Herboristería", etiqueta: "Ejemplo de muestra", desc: "Tisana genérica. Consultá variedades cuando el contacto esté confirmado.", arte: "tea", clase: "prod-herb", precio: null },
+    { nombre: "Suplemento diario (ejemplo)", categoria: "Suplementos", etiqueta: "Ejemplo de muestra", desc: "Suplemento genérico de uso diario. Sin marca real.", arte: "suple", clase: "prod-supl", precio: null },
+    { nombre: "Suplemento para entrenamiento (ejemplo)", categoria: "Suplementos", etiqueta: "Ejemplo de muestra", desc: "Suplemento genérico para acompañar el entrenamiento.", arte: "suple", clase: "prod-supl", precio: null },
+    { nombre: "Suplemento vegetal (ejemplo)", categoria: "Suplementos", etiqueta: "Ejemplo de muestra", desc: "Suplemento genérico de origen vegetal. Ejemplo ilustrativo.", arte: "suple", clase: "prod-supl", precio: null },
+    { nombre: "Proteína en polvo (ejemplo)", categoria: "Proteínas", etiqueta: "Ejemplo de muestra", desc: "Proteína genérica en polvo. Consultá opciones disponibles.", arte: "protein", clase: "prod-prot", precio: null },
+    { nombre: "Barra proteica (ejemplo)", categoria: "Proteínas", etiqueta: "Ejemplo de muestra", desc: "Barra genérica con aporte proteico. Sin marca real.", arte: "protein", clase: "prod-prot", precio: null },
+    { nombre: "Proteína vegetal (ejemplo)", categoria: "Proteínas", etiqueta: "Ejemplo de muestra", desc: "Proteína genérica de origen vegetal. Ejemplo ilustrativo.", arte: "protein", clase: "prod-prot", precio: null },
+    { nombre: "Multivitamínico (ejemplo)", categoria: "Vitaminas", etiqueta: "Ejemplo de muestra", desc: "Multivitamínico genérico. Consultá opciones disponibles.", arte: "vit", clase: "prod-vit", precio: null },
+    { nombre: "Vitamina C (ejemplo)", categoria: "Vitaminas", etiqueta: "Ejemplo de muestra", desc: "Vitamina C genérica. Ejemplo sin marca real.", arte: "vit", clase: "prod-vit", precio: null },
+    { nombre: "Complejo B (ejemplo)", categoria: "Vitaminas", etiqueta: "Ejemplo de muestra", desc: "Complejo B genérico. Presentación a modo ilustrativo.", arte: "vit", clase: "prod-vit", precio: null },
+    { nombre: "Mix de frutos secos (ejemplo)", categoria: "Alimentos saludables", etiqueta: "Ejemplo de muestra", desc: "Mezcla genérica de frutos secos. Presentaciones a modo ilustrativo.", arte: "seeds", clase: "prod-ali", precio: null },
+    { nombre: "Granola (ejemplo)", categoria: "Alimentos saludables", etiqueta: "Ejemplo de muestra", desc: "Granola genérica. Consultá variedades cuando el contacto esté confirmado.", arte: "granola", clase: "prod-ali", precio: null },
+    { nombre: "Avena integral (ejemplo)", categoria: "Alimentos saludables", etiqueta: "Ejemplo de muestra", desc: "Avena integral genérica para todos los días. Sin marca real.", arte: "granola", clase: "prod-ali", precio: null }
   ],
   arteSVG: {
     protein: '<svg viewBox="0 0 64 64" width="60" height="60" aria-hidden="true"><rect x="18" y="8" width="28" height="8" rx="3" fill="#1e3d14"/><rect x="16" y="16" width="32" height="40" rx="8" fill="#fff" stroke="#1e3d14" stroke-width="3"/><rect x="16" y="30" width="32" height="12" fill="#ffd91f"/><path d="M26 36h12" stroke="#1e3d14" stroke-width="3" stroke-linecap="round"/></svg>',
@@ -72,53 +92,83 @@ const CONFIG = {
     return base + "?text=" + encodeURIComponent(mensaje || "Hola, quiero hacer una consulta a " + CONFIG.negocio + ".");
   }
 
-  // 1. Render editorial de productos (composiciones demo, sin fotos de otro negocio)
-  var grid = document.getElementById("productGrid");
-  if (grid) {
-    grid.innerHTML = CONFIG.productos.map(function (p) {
-      var svg = (CONFIG.arteSVG && CONFIG.arteSVG[p.arte]) || "";
-      return (
-        '<article class="product-card editorial ' + p.clase + '">' +
-          '<div class="product-art" role="img" aria-label="Ilustración de demostración: ' + p.nombre + ' (a reemplazar por foto real)">' +
-            '<span class="product-tag">' + p.etiqueta + '</span>' +
+  function formatPrecio(p) {
+    if (p.precio === null || p.precio === undefined || p.precio === "") return "Consultar";
+    if (Number(p.precio) === 0) return "Consultar";
+    return String(p.precio);
+  }
+
+  // 1. Render de catálogo demo agrupado por categoría (sin fotos reales, solo SVG demo)
+  var catalogo = document.getElementById("catalogo");
+  var gridLegacy = document.getElementById("productGrid");
+  function productCard(p) {
+    var svg = (CONFIG.arteSVG && CONFIG.arteSVG[p.arte]) || "";
+    return (
+      '<article class="product-card editorial ' + p.clase + '">' +
+          '<div class="product-art" role="img" aria-label="Ilustración de demostración: ' + p.nombre + ' (no es foto real)">' +
+            '<span class="product-tag">' + p.categoria + '</span>' +
             '<span class="product-svg">' + svg + '</span>' +
             '<span class="product-leaf" aria-hidden="true"></span>' +
             '<span class="photo-label">Demostración</span>' +
           "</div>" +
           '<div class="product-body">' +
-            '<p class="product-cat">' + p.categoria + "</p>" +
             "<h3>" + p.nombre + "</h3>" +
-            "<p>" + p.desc + "</p>" +
-            '<span class="product-price">Consultar precio y disponibilidad</span>' +
-            '<a href="#" class="btn btn-primary" data-wa="Hola Dietética Mitre, quiero consultar por: ' + p.nombre + '.">Consultar por WhatsApp</a>' +
-          "</div>" +
-        "</article>"
+          "<p>" + p.desc + "</p>" +
+          '<span class="product-price">' + formatPrecio(p) + '</span>' +
+          '<a href="#" class="btn btn-primary" data-wa="Hola Dietética Mitre, quiero consultar por: ' + p.nombre + '.">Consultar por WhatsApp</a>' +
+        "</div>" +
+      "</article>"
+    );
+  }
+  if (catalogo) {
+    var maxItems = 30;
+    var items = (CONFIG.productos || []).slice(0, maxItems);
+    catalogo.innerHTML = (CONFIG.categorias || []).map(function (cat) {
+      var delCat = items.filter(function (p) { return p.categoria === cat.nombre; });
+      if (!delCat.length) return "";
+      return (
+        '<section class="catalog-group" id="' + cat.id + '" aria-label="Categoría ' + cat.nombre + '">' +
+          '<div class="catalog-group-head"><h3>' + cat.nombre + '</h3>' +
+          '<span class="catalog-count">' + delCat.length + ' ejemplos</span></div>' +
+          '<div class="product-grid">' + delCat.map(productCard).join("") + "</div>" +
+        "</section>"
       );
     }).join("");
+  } else if (gridLegacy) {
+    gridLegacy.innerHTML = (CONFIG.productos || []).slice(0, 30).map(productCard).join("");
   }
+  // Nota: los reveals se activan en initReveal (paso 4), tras el render.
 
-  // 2. Conectar todos los botones WhatsApp
+  // 2. Conectar todos los botones WhatsApp (solo si hay número confirmado)
   document.querySelectorAll("[data-wa]").forEach(function (el) {
     var msg = el.getAttribute("data-wa");
-    el.setAttribute("href", waLink(msg));
-    el.setAttribute("target", "_blank");
-    el.setAttribute("rel", "noopener");
+    if (isPlaceholderWhatsApp()) {
+      el.setAttribute("href", "#");
+      el.removeAttribute("target");
+      el.removeAttribute("rel");
+    } else {
+      el.setAttribute("href", waLink(msg));
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
+    }
     el.addEventListener("click", function (ev) {
       if (isPlaceholderWhatsApp()) {
         ev.preventDefault();
-        showToast("Demo: conectá el número real de WhatsApp en CONFIG (app.js). Mensaje: \"" + msg + "\"");
+        showToast("Demo de portfolio: el WhatsApp aún no está configurado. Contacto pendiente de confirmación.");
       }
     });
   });
 
-  // 3. Instagram + Maps + textos editables
+  // 3. Instagram + Maps + textos (pendientes de confirmación en esta demo)
   document.querySelectorAll("[data-instagram-link]").forEach(function (el) {
     var ph = isPlaceholderUrl(CONFIG.instagramUrl);
     el.setAttribute("href", ph ? "#" : CONFIG.instagramUrl);
     if (ph) {
+      el.removeAttribute("target");
+      el.removeAttribute("rel");
       el.addEventListener("click", function (ev) {
         ev.preventDefault();
-        showToast("Instagram a confirmar: INSTAGRAM_A_CONFIRMAR.");
+        showToast("Demo de portfolio: Instagram aún no configurado.");
       });
     } else {
       el.setAttribute("target", "_blank");
@@ -131,9 +181,11 @@ const CONFIG = {
     var phMap = isPlaceholderUrl(CONFIG.mapsUrl);
     el.setAttribute("href", phMap ? "#" : CONFIG.mapsUrl);
     if (phMap) {
+      el.removeAttribute("target");
+      el.removeAttribute("rel");
       el.addEventListener("click", function (ev) {
         ev.preventDefault();
-        showToast("URL de Google Maps a confirmar: MAPS_URL_A_CONFIRMAR.");
+        showToast("Demo de portfolio: mapa aún no configurado.");
       });
     } else {
       el.setAttribute("target", "_blank");
@@ -145,7 +197,64 @@ const CONFIG = {
   document.querySelectorAll('[data-field="horarios"]').forEach(function (el) { el.textContent = CONFIG.horarios; });
   document.querySelectorAll('[data-field="whatsappLabel"]').forEach(function (el) { el.textContent = CONFIG.whatsappLabel; });
 
-  // 4. Menú móvil
+  // 4. Reveal on scroll (respeta movimiento reducido)
+  (function initReveal() {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // Catálogo dinámico: observar grupos y tarjetas cuando se rendericen.
+    function collect() {
+      var els = document.querySelectorAll(
+        ".section-head, .kicker, .cat-card, .catalog-group-head, .step, " +
+        ".info-row, .map-box, .cta-box, .shipping-copy, " +
+        ".shipping-visual, .hero-local"
+      );
+      return els;
+    }
+    function arm(scope) {
+      collect().forEach(function (el) {
+        if (el.classList.contains("reveal") || el.closest(".hero")) return;
+        el.classList.add("reveal");
+      });
+      // Escalonado dentro de grillas.
+      document.querySelectorAll(".cat-grid, .steps").forEach(function (grid) {
+        Array.prototype.forEach.call(grid.children, function (child, i) {
+          child.style.setProperty("--d", Math.min(i * 90, 450) + "ms");
+        });
+      });
+    }
+    function revealCardGrid(container) {
+      if (!container) return;
+      Array.prototype.forEach.call(container.querySelectorAll(".product-card"), function (card, i) {
+        card.classList.add("reveal");
+        card.style.setProperty("--d", Math.min((i % 4) * 90, 360) + "ms");
+        if (observer) observer.observe(card);
+      });
+    }
+    var observer = null;
+    if (!reduce && "IntersectionObserver" in window) {
+      observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("in");
+            observer.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    }
+    // Exponer para el render del catálogo (paso 1 lo llama tras pintar).
+    window.__armReveals = function (catalogRoot) {
+      arm();
+      revealCardGrid(catalogRoot || document);
+      var els = document.querySelectorAll(".reveal:not(.in)");
+      if (reduce || !observer) {
+        els.forEach(function (el) { el.classList.add("in"); });
+      } else {
+        els.forEach(function (el) { observer.observe(el); });
+      }
+    };
+    window.__armReveals(null);
+  })();
+
+  // 5. Menú móvil
   var menuBtn = document.getElementById("menuBtn");
   var nav = document.getElementById("nav");
   if (menuBtn && nav) {
@@ -160,9 +269,57 @@ const CONFIG = {
         menuBtn.setAttribute("aria-expanded", "false");
       });
     });
+    document.addEventListener("keydown", function (ev) {
+      if ((ev.key === "Escape" || ev.key === "Esc") && nav.classList.contains("open")) {
+        nav.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute("aria-label", "Abrir menú");
+        menuBtn.focus();
+      }
+    });
   }
 
-  // 5. Verificación silenciosa del logo (sin errores en consola para la demo)
+  // 5. Efectos de scroll: header compacto y spy (sin parallax)
+  (function initScrollFx() {
+    var header = document.getElementById("header");
+    var ticking = false;
+
+    function onScroll() {
+      var y = window.scrollY || window.pageYOffset || 0;
+      if (header) header.classList.toggle("scrolled", y > 24);
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        ticking = true;
+        (window.requestAnimationFrame || function (fn) { fn(); })(onScroll);
+      }
+    }, { passive: true });
+    onScroll();
+
+    // Scrollspy: resalta en el nav la sección visible.
+    var links = Array.prototype.slice.call(document.querySelectorAll(".nav-link[href^='#']"));
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a; });
+    if ("IntersectionObserver" in window && links.length) {
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          var a = map[en.target.id];
+          if (!a) return;
+          if (en.isIntersecting) {
+            links.forEach(function (l) { l.classList.remove("active"); });
+            a.classList.add("active");
+          }
+        });
+      }, { rootMargin: "-40% 0px -55% 0px" });
+      Object.keys(map).forEach(function (id) {
+        var s = document.getElementById(id);
+        if (s) spy.observe(s);
+      });
+    }
+  })();
+
+  // 6. Verificación silenciosa del logo (sin errores en consola para la demo)
   ["imagenes/logo.jpg"].forEach(function (src) {
     var img = new Image();
     img.onerror = function () {
